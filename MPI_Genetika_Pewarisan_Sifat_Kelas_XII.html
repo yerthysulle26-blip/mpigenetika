@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Biologi XII — Genetika dan Pewarisan Sifat</title>
+<style>
+:root{--navy:#102a43;--teal:#087e8b;--mint:#dff5ef;--gold:#f4b942;--ink:#243b53;--paper:#f4f8fb;--white:#fff;--pink:#ffe8e8}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(125deg,#102a43,#087e8b);color:white;padding:38px 22px 30px}
+.hero{max-width:1100px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;color:#b9eee5;font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.12;margin:10px 0}.hero p{max-width:750px;color:#e5f6f4}
+.pill{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;border-radius:99px;padding:5px 12px;margin:5px 5px 0 0;font-size:.85rem}
+nav{position:sticky;top:0;background:#fff;z-index:5;box-shadow:0 3px 14px #102a4315;display:flex;gap:6px;overflow:auto;padding:10px max(12px,calc((100% - 1100px)/2))}
+nav button{border:0;background:transparent;color:#486581;padding:10px 13px;border-radius:10px;white-space:nowrap;font-weight:700;cursor:pointer}
+nav button.active,nav button:hover{background:var(--mint);color:#05636d}
+main{max-width:1100px;margin:28px auto;padding:0 18px}.page{display:none}.page.active{display:block}
+h2{color:var(--navy);font-size:1.8rem;margin:8px 0 18px}h3{color:#087e8b;margin:4px 0 8px}
+.card{background:white;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 8px 26px #102a4310;border:1px solid #e4edf2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.callout{border-left:5px solid var(--gold);background:#fff8e7;padding:14px 17px;border-radius:10px;margin:14px 0}
+.small{font-size:.9rem;color:#627d98}.btn{border:0;background:var(--teal);color:#fff;padding:11px 17px;border-radius:10px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.92)}.btn.secondary{background:#e4f4f1;color:#05636d}
+table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:10px;border:1px solid #d9e5ec;text-align:left}th{background:#eaf5f4}
+.diagram{background:#f7fbfd;border-radius:14px;padding:14px;text-align:center;overflow:auto}.diagram svg{max-width:100%;height:auto}
+.video{aspect-ratio:16/9;width:100%;border:0;border-radius:14px;background:#102a43}
+details{background:#f7fbfd;border-radius:12px;padding:12px 15px;margin:10px 0}summary{font-weight:700;cursor:pointer;color:#087e8b}
+.question{border:1px solid #dce8ee;border-radius:14px;padding:16px;margin:14px 0;background:#fff}.question p{font-weight:700;margin-top:0}
+.option{display:block;padding:8px 10px;margin:6px 0;border-radius:8px;background:#f4f8fb;cursor:pointer}.option:hover{background:#e4f4f1}.option input{margin-right:9px}
+.feedback{font-size:.9rem;margin-top:8px}.correct{color:#087443}.wrong{color:#b42318}
+footer{text-align:center;color:#627d98;padding:30px 18px;font-size:.9rem}
+.progress{height:9px;background:#e4edf2;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:#10a37f;width:0}
+.kpi{font-size:1.5rem;font-weight:800;color:#087e8b}
+@media(max-width:600px){header{padding:28px 18px}.card{padding:17px}nav button{padding:9px}}
+</style>
+</head>
+<body>
+<header><div class="hero">
+<div class="eyebrow">Media Pembelajaran Interaktif • Biologi Fase F</div>
+<h1>GENETIKA &<br>PEWARISAN SIFAT</h1>
+<p>Menjelajahi bagaimana informasi kehidupan disimpan, diekspresikan, dan diwariskan dari satu generasi ke generasi berikutnya.</p>
+<span class="pill">Kelas XII SMA/MA</span><span class="pill">Fase F</span><span class="pill">Biologi</span>
+<p><b>Guru:</b> Yerthy Sulle</p>
+</div></header>
+<nav id="nav">
+<button class="active" data-page="panduan">Panduan</button><button data-page="tujuan">Tujuan</button><button data-page="materi">Materi</button><button data-page="video">Video</button><button data-page="contoh">Contoh Soal</button><button data-page="asesmen">Asesmen 20 Soal</button><button data-page="refleksi">Refleksi</button>
+</nav>
+<main>
+<section id="panduan" class="page active">
+<h2>Selamat Datang, Penjelajah Genetika!</h2>
+<div class="card"><h3>Petunjuk penggunaan MPI</h3><ol>
+<li>Gunakan menu navigasi di bagian atas untuk berpindah halaman.</li>
+<li>Baca tujuan pembelajaran sebelum mempelajari materi.</li>
+<li>Pelajari setiap submateri secara berurutan, amati ilustrasi, dan buka kotak informasi tambahan.</li>
+<li>Tonton video pembelajaran melalui tombol putar atau tautan video.</li>
+<li>Kerjakan contoh soal untuk menguji pemahaman konsep dan perhitungan persilangan.</li>
+<li>Kerjakan asesmen 20 soal. Pilih satu jawaban paling tepat pada setiap nomor, lalu tekan <b>Periksa Jawaban</b>.</li>
+<li>Setelah diperiksa, skor, umpan balik, dan kunci jawaban dapat ditinjau. Kerjakan ulang untuk latihan.</li>
+</ol><div class="callout"><b>Catatan untuk guru:</b> MPI ini dapat digunakan untuk pembelajaran mandiri, diskusi kelompok, penguatan konsep, maupun evaluasi formatif. Video memerlukan koneksi internet.</div></div>
+<div class="grid"><div class="card"><div class="kpi">01</div><b>Amati</b><p class="small">Kenali DNA, gen, kromosom, dan pola pewarisan.</p></div><div class="card"><div class="kpi">02</div><b>Analisis</b><p class="small">Gunakan hukum Mendel untuk memprediksi keturunan.</p></div><div class="card"><div class="kpi">03</div><b>Buktikan</b><p class="small">Uji pemahaman melalui asesmen interaktif.</p></div></div>
+<button class="btn" onclick="go('tujuan')">Mulai Pembelajaran →</button>
+</section>
+<section id="tujuan" class="page">
+<h2>Tujuan Pembelajaran</h2><div class="card"><p>Setelah mengikuti pembelajaran, peserta didik diharapkan mampu:</p><ol>
+<li>Menjelaskan hubungan antara DNA, gen, alel, dan kromosom.</li>
+<li>Mengidentifikasi struktur nukleotida serta membedakan DNA dan RNA.</li>
+<li>Menjelaskan alur ekspresi gen melalui replikasi, transkripsi, dan translasi secara sederhana.</li>
+<li>Menganalisis peran mitosis dan meiosis dalam kesinambungan serta variasi genetik.</li>
+<li>Menerapkan Hukum Mendel I dan II pada persilangan monohibrid dan dihibrid.</li>
+<li>Membedakan dominansi penuh, dominansi tidak sempurna, kodominansi, dan beberapa pola pewarisan lainnya.</li>
+<li>Menyelesaikan masalah genetika dengan menentukan gamet, genotipe, fenotipe, dan peluang keturunan.</li>
+<li>Menafsirkan contoh pewarisan terpaut kelamin dan memahami bahwa sifat kompleks dipengaruhi banyak gen serta lingkungan.</li>
+</ol></div>
+<div class="card"><h3>Pertanyaan pemantik</h3><p>Mengapa anak dapat memiliki kemiripan dengan kedua orang tuanya, tetapi tetap mempunyai kombinasi sifat yang unik?</p><p class="small">Pikirkan contoh pada keluarga, varietas tanaman, atau hewan ternak. Catat dugaan awal sebelum membaca materi.</p></div>
+</section>
+<section id="materi" class="page">
+<h2>Materi Pembelajaran</h2>
+<div class="card"><h3>1. Konsep dasar genetika</h3><p><b>Genetika</b> adalah cabang biologi yang mempelajari variasi dan pewarisan sifat. <b>Hereditas</b> adalah proses penurunan informasi genetik dari induk kepada keturunannya. Informasi tersebut tersimpan terutama dalam DNA.</p>
+<div class="diagram"><svg viewBox="0 0 760 190" role="img" aria-label="Hubungan kromosom DNA dan gen"><rect x="18" y="28" width="190" height="125" rx="18" fill="#dff5ef" stroke="#087e8b" stroke-width="2"/><path d="M75 55 C35 80 125 105 75 130 M145 55 C185 80 95 105 145 130 M75 55 L145 55 M62 75 L158 75 M62 95 L158 95 M62 115 L158 115 M75 130 L145 130" stroke="#087e8b" stroke-width="5" fill="none"/><text x="113" y="174" text-anchor="middle" font-size="16" fill="#102a43">Kromosom</text><path d="M220 90 H285" stroke="#f4b942" stroke-width="4"/><path d="M275 80 L290 90 L275 100" fill="none" stroke="#f4b942" stroke-width="4"/><rect x="300" y="28" width="190" height="125" rx="18" fill="#eaf1ff" stroke="#4c6fff" stroke-width="2"/><path d="M335 52 C455 52 335 128 455 128 M455 52 C335 52 455 128 335 128" stroke="#4c6fff" stroke-width="4" fill="none"/><path d="M355 62 L435 62 M345 82 L445 82 M345 102 L445 102 M355 122 L435 122" stroke="#087e8b" stroke-width="3"/><text x="395" y="174" text-anchor="middle" font-size="16" fill="#102a43">DNA</text><path d="M502 90 H567" stroke="#f4b942" stroke-width="4"/><path d="M557 80 L572 90 L557 100" fill="none" stroke="#f4b942" stroke-width="4"/><rect x="585" y="28" width="155" height="125" rx="18" fill="#fff3d6" stroke="#d99a17" stroke-width="2"/><path d="M615 90 H710" stroke="#d99a17" stroke-width="11" stroke-linecap="round"/><path d="M650 70 V110" stroke="#087e8b" stroke-width="3"/><text x="662" y="174" text-anchor="middle" font-size="16" fill="#102a43">Gen (segmen DNA)</text></svg><p class="small">Skema konseptual: kromosom tersusun atas DNA dan protein; gen merupakan segmen DNA yang memiliki fungsi tertentu.</p></div>
+<ul><li><b>DNA</b> (deoxyribonucleic acid): molekul penyimpan informasi genetik.</li><li><b>Gen</b>: unit fungsional pewarisan, berupa urutan DNA yang menghasilkan produk fungsional (RNA atau protein).</li><li><b>Alel</b>: variasi bentuk suatu gen pada lokus yang sama.</li><li><b>Kromosom</b>: struktur DNA yang berasosiasi dengan protein, terutama histon.</li><li><b>Genotipe</b>: susunan alel individu; <b>fenotipe</b>: sifat yang teramati sebagai hasil interaksi genotipe dan lingkungan.</li></ul>
+</div>
+<div class="card"><h3>2. Struktur DNA dan RNA</h3><p>Nukleotida tersusun atas gula pentosa, gugus fosfat, dan basa nitrogen. DNA umumnya beruntai ganda berbentuk heliks; RNA umumnya beruntai tunggal.</p>
+<div class="grid"><div class="diagram"><h3>DNA</h3><svg viewBox="0 0 280 170"><path d="M70 15 C230 45 50 125 210 155 M210 15 C50 45 230 125 70 155" fill="none" stroke="#087e8b" stroke-width="5"/><g stroke="#f4b942" stroke-width="4"><path d="M94 28 L186 28 M74 55 L206 55 M73 85 L207 85 M91 115 L189 115 M125 143 L155 143"/></g><text x="140" y="166" text-anchor="middle" font-size="10" fill="#243b53">Heliks ganda</text></svg></div><div class="diagram"><h3>RNA</h3><svg viewBox="0 0 280 170"><path d="M70 12 C210 35 80 75 190 95 C245 112 135 140 205 158" fill="none" stroke="#4c6fff" stroke-width="6"/><g fill="#f4b942"><circle cx="70" cy="12" r="7"/><circle cx="135" cy="42" r="7"/><circle cx="112" cy="76" r="7"/><circle cx="190" cy="95" r="7"/><circle cx="185" cy="132" r="7"/><circle cx="205" cy="158" r="7"/></g></svg><p class="small">Umumnya satu untai</p></div></div>
+<table><tr><th>Aspek</th><th>DNA</th><th>RNA</th></tr><tr><td>Gula</td><td>Deoksiribosa</td><td>Ribosa</td></tr><tr><td>Basa khas</td><td>Timin (T)</td><td>Urasil (U)</td></tr><tr><td>Bentuk umum</td><td>Dua untai</td><td>Satu untai</td></tr><tr><td>Peran utama</td><td>Penyimpanan informasi genetik</td><td>Ekspresi gen dan sintesis protein</td></tr></table>
+<p>Pasangan basa komplementer DNA: A–T dan G–C. Pada RNA, A berpasangan dengan U.</p></div>
+<div class="card"><h3>3. Ekspresi gen dan sintesis protein</h3><p>Informasi DNA dapat diekspresikan melalui dua tahap utama: <b>transkripsi</b> (DNA menjadi RNA) dan <b>translasi</b> (informasi kodon mRNA diterjemahkan menjadi urutan asam amino di ribosom). Replikasi DNA menggandakan DNA sebelum pembelahan sel.</p>
+<div class="diagram"><svg viewBox="0 0 700 145"><rect x="15" y="35" width="145" height="65" rx="12" fill="#dff5ef" stroke="#087e8b"/><text x="87" y="74" text-anchor="middle" font-size="18" fill="#102a43">DNA</text><path d="M165 67 H245" stroke="#f4b942" stroke-width="4"/><path d="M235 57 L250 67 L235 77" fill="none" stroke="#f4b942" stroke-width="4"/><text x="205" y="48" font-size="12" text-anchor="middle" fill="#627d98">Transkripsi</text><rect x="260" y="35" width="145" height="65" rx="12" fill="#eaf1ff" stroke="#4c6fff"/><text x="332" y="74" text-anchor="middle" font-size="18" fill="#102a43">mRNA</text><path d="M410 67 H490" stroke="#f4b942" stroke-width="4"/><path d="M480 57 L495 67 L480 77" fill="none" stroke="#f4b942" stroke-width="4"/><text x="450" y="48" font-size="12" text-anchor="middle" fill="#627d98">Translasi</text><rect x="505" y="35" width="180" height="65" rx="12" fill="#fff3d6" stroke="#d99a17"/><text x="595" y="74" text-anchor="middle" font-size="18" fill="#102a43">Polipeptida</text></svg></div>
+<ul><li><b>Replikasi:</b> DNA membuat salinan DNA dengan prinsip semikonservatif.</li><li><b>Transkripsi:</b> RNA polimerase menyintesis RNA berdasarkan cetakan DNA.</li><li><b>Translasi:</b> ribosom membaca kodon mRNA; tRNA membawa asam amino yang sesuai.</li></ul>
+<div class="callout">Contoh: perubahan urutan basa DNA (mutasi) dapat mengubah kodon mRNA dan berpotensi mengubah urutan asam amino atau fungsi protein.</div></div>
+<div class="card"><h3>4. Pembelahan sel dan variasi genetik</h3><p><b>Mitosis</b> menghasilkan dua sel anak yang secara genetik umumnya identik dengan sel induk dan penting untuk pertumbuhan serta perbaikan jaringan. <b>Meiosis</b> menghasilkan sel haploid untuk reproduksi seksual dan meningkatkan variasi genetik.</p><table><tr><th>Aspek</th><th>Mitosis</th><th>Meiosis</th></tr><tr><td>Jumlah pembelahan</td><td>Satu</td><td>Dua</td></tr><tr><td>Hasil</td><td>2 sel anak</td><td>Umumnya 4 sel haploid</td></tr><tr><td>Jumlah kromosom</td><td>Dipertahankan</td><td>Menjadi setengah</td></tr><tr><td>Peran</td><td>Pertumbuhan/perbaikan</td><td>Pembentukan gamet dan variasi</td></tr></table><p>Pindah silang pada profase I dan pemilahan kromosom homolog secara bebas merupakan sumber penting variasi genetik.</p></div>
+<div class="card"><h3>5. Hukum Mendel</h3><p>Gregor Mendel melakukan persilangan tanaman ercis dan merumuskan pola dasar pewarisan sifat.</p><ul><li><b>Hukum I (segregasi):</b> pasangan alel berpisah saat pembentukan gamet; setiap gamet menerima satu alel.</li><li><b>Hukum II (asortasi bebas):</b> alel dari gen berbeda diwariskan secara bebas jika gen-gen tersebut tidak terpaut (atau cukup jauh pada kromosom yang sama).</li></ul>
+<h3>Persilangan monohibrid</h3><p>Contoh dominansi penuh: T = tinggi (dominan), t = pendek (resesif). P: TT × tt → F1 seluruhnya Tt (tinggi). F1 disilangkan: Tt × Tt.</p><div class="diagram"><b>Kotak Punnett Tt × Tt</b><table style="max-width:380px;margin:10px auto"><tr><th>×</th><th>T</th><th>t</th></tr><tr><th>T</th><td>TT</td><td>Tt</td></tr><tr><th>t</th><td>Tt</td><td>tt</td></tr></table><b>Genotipe 1 TT : 2 Tt : 1 tt</b><br><b>Fenotipe 3 tinggi : 1 pendek</b></div>
+<h3>Persilangan dihibrid</h3><p>Untuk AaBb × AaBb dengan asortasi bebas dan dominansi penuh, tiap induk menghasilkan gamet AB, Ab, aB, ab. Rasio fenotipe klasik F2 adalah <b>9 : 3 : 3 : 1</b>.</div>
+<div class="card"><h3>6. Variasi pola pewarisan</h3><ul><li><b>Dominansi tidak sempurna (intermediet):</b> heterozigot menunjukkan fenotipe perantara. Contoh ilustratif: merah × putih menghasilkan merah muda; F2 1 merah : 2 merah muda : 1 putih.</li><li><b>Kodominansi:</b> kedua alel terekspresi bersama, misalnya alel Iᴬ dan Iᴮ pada golongan darah AB.</li><li><b>Alel ganda:</b> satu gen memiliki lebih dari dua variasi alel dalam populasi, misalnya sistem ABO (Iᴬ, Iᴮ, i).</li><li><b>Pewarisan terpaut kelamin:</b> gen berada pada kromosom seks; contoh klasik adalah buta warna merah-hijau yang sering terpaut kromosom X.</li><li><b>Epistasis:</b> satu gen memengaruhi atau menutupi ekspresi gen lain.</li><li><b>Poligenik:</b> sifat dipengaruhi banyak gen, misalnya variasi tinggi badan; lingkungan juga berperan.</li></ul><div class="callout">Tidak semua sifat manusia mengikuti pola satu gen dominan-resesif sederhana. Banyak sifat merupakan hasil interaksi banyak gen dan lingkungan.</div></div>
+<div class="card"><h3>7. Mutasi dan penerapan genetika</h3><p><b>Mutasi</b> adalah perubahan materi genetik. Mutasi dapat terjadi pada tingkat gen atau kromosom. Dampaknya beragam: netral, merugikan, atau dalam kondisi tertentu menguntungkan. Mutasi pada sel kelamin dapat diwariskan; mutasi pada sel tubuh umumnya tidak diwariskan kepada keturunan.</p><p>Genetika diterapkan dalam pemuliaan tanaman/hewan, diagnosis dan konseling genetik, forensik DNA, konservasi, serta bioteknologi. Pemanfaatannya perlu mempertimbangkan etika, privasi data genetik, dan dampak sosial.</p></div>
+</section>
+<section id="video" class="page">
+<h2>Video Pembelajaran</h2><div class="card"><h3>Video 1 — Pewarisan sifat dan Hukum Mendel</h3><p>Istilah persilangan, monohibrid, dihibrid, gamet, genotipe, dan fenotipe.</p><iframe class="video" src="https://www.youtube.com/embed/gCLDvxDQmGQ" title="Pewarisan sifat Hukum Mendel" allowfullscreen loading="lazy"></iframe><p><a href="https://www.youtube.com/watch?v=gCLDvxDQmGQ" target="_blank" rel="noopener">Buka video di YouTube ↗</a></p></div>
+<div class="card"><h3>Video 2 — Substansi genetika</h3><p>Pengantar materi genetik, DNA, kromosom, dan pewarisan sifat.</p><iframe class="video" src="https://www.youtube.com/embed/AFpWNDcgWRY" title="Substansi genetika dan pewarisan sifat" allowfullscreen loading="lazy"></iframe><p><a href="https://www.youtube.com/watch?v=AFpWNDcgWRY" target="_blank" rel="noopener">Buka video di YouTube ↗</a></p></div>
+<div class="callout">Jika video tidak tampil, periksa koneksi internet atau buka tautan YouTube. Guru dapat mengganti tautan video sesuai kebutuhan kelas.</div>
+</section>
+<section id="contoh" class="page">
+<h2>Contoh Soal dan Pembahasan</h2>
+<div class="card"><h3>Contoh 1 — Monohibrid</h3><p>Pada tanaman, biji bulat (B) dominan terhadap keriput (b). Jika dua tanaman heterozigot disilangkan (Bb × Bb), tentukan rasio genotipe dan fenotipenya.</p><details><summary>Lihat pembahasan</summary><p>Gamet masing-masing induk: B dan b.</p><table style="max-width:350px"><tr><th>×</th><th>B</th><th>b</th></tr><tr><th>B</th><td>BB</td><td>Bb</td></tr><tr><th>b</th><td>Bb</td><td>bb</td></tr></table><p>Genotipe = 1 BB : 2 Bb : 1 bb. Fenotipe = 3 bulat : 1 keriput.</p></details></div>
+<div class="card"><h3>Contoh 2 — Dihibrid</h3><p>Persilangan AaBb × AaBb. Dengan asortasi bebas dan dominansi penuh, berapa peluang keturunan aabb?</p><details><summary>Lihat pembahasan</summary><p>Peluang aa dari Aa × Aa = 1/4. Peluang bb dari Bb × Bb = 1/4. Karena asortasi bebas, peluang aabb = 1/4 × 1/4 = <b>1/16</b>.</p></details></div>
+<div class="card"><h3>Contoh 3 — Golongan darah ABO</h3><p>Seorang ayah bergolongan darah A heterozigot (Iᴬi) dan ibu bergolongan darah B heterozigot (Iᴮi). Apa kemungkinan golongan darah anak?</p><details><summary>Lihat pembahasan</summary><p>Gamet ayah: Iᴬ atau i. Gamet ibu: Iᴮ atau i. Kombinasi: IᴬIᴮ (AB), Iᴬi (A), Iᴮi (B), ii (O). Masing-masing memiliki peluang 25%.</p></details></div>
+<div class="card"><h3>Latihan cepat</h3><p>Jika persilangan Tt × tt dilakukan, berapa peluang keturunan berfenotipe resesif?</p><button class="btn secondary" onclick="document.getElementById('quick').hidden=false">Tampilkan jawaban</button><p id="quick" hidden class="correct"><b>Jawaban: 50%.</b> Keturunannya 1 Tt : 1 tt.</p></div>
+</section>
+<section id="asesmen" class="page">
+<h2>Asesmen Sumatif — 20 Soal</h2><div class="card"><p>Petunjuk: pilih satu jawaban terbaik untuk setiap soal. Setiap jawaban benar bernilai 5 poin. Skor maksimal 100.</p><div class="progress"><span id="bar"></span></div><p class="small" id="answered">0 dari 20 soal dijawab</p><div id="quiz"></div><button class="btn" onclick="grade()">Periksa Jawaban</button> <button class="btn secondary" onclick="resetQuiz()">Ulangi Asesmen</button><div id="result" aria-live="polite"></div></div>
+</section>
+<section id="refleksi" class="page">
+<h2>Refleksi Pembelajaran</h2><div class="card"><h3>Saat ini saya mampu…</h3><label class="option"><input type="checkbox"> menjelaskan hubungan DNA, gen, dan kromosom.</label><label class="option"><input type="checkbox"> membedakan DNA dan RNA.</label><label class="option"><input type="checkbox"> menjelaskan peran meiosis dalam variasi genetik.</label><label class="option"><input type="checkbox"> menyelesaikan persilangan monohibrid dan dihibrid.</label><label class="option"><input type="checkbox"> membedakan beberapa pola pewarisan sifat.</label><h3>Pertanyaan refleksi</h3><p>Apa konsep yang paling mudah saya pahami? Bagian mana yang masih perlu saya latih? Bagaimana genetika bermanfaat dalam kehidupan?</p><textarea id="reflection" rows="5" style="width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:12px" placeholder="Tuliskan refleksi Anda di sini..."></textarea><p><button class="btn secondary" onclick="saveReflection()">Simpan refleksi di perangkat ini</button> <span id="saved" class="small"></span></p></div>
+<div class="card"><h3>Sumber belajar dan referensi</h3><ul><li><a href="https://repositori.kemendikdasmen.go.id/22101/1/XII_Biologi_KD-3.3_Final.pdf" target="_blank" rel="noopener">Modul Biologi Kelas XII: Materi Genetik — repositori Kemendikdasmen</a>.</li><li><a href="https://repositori.kemendikdasmen.go.id/22097/1/XII_Biologi_KD-3.5_Final.pdf" target="_blank" rel="noopener">Modul Biologi Kelas XII: Pewarisan Sifat Makhluk Hidup — repositori Kemendikdasmen</a>.</li><li><a href="https://pusatinformasi.rumahpendidikan.kemendikdasmen.go.id/hc/id/articles/52341578607385-Materi-Sumber-Belajar-Jenjang-SMA-dan-SMK-Materi-Umum" target="_blank" rel="noopener">Sumber Belajar Jenjang SMA/SMK — Rumah Pendidikan</a>.</li></ul></div>
+</section>
+</main>
+<footer>MPI Biologi Kelas XII • Genetika dan Pewarisan Sifat • Disusun untuk pembelajaran Fase F</footer>
+<script>
+const pages=[...document.querySelectorAll('.page')];
+function go(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+const qs=[
+["Unit dasar pewarisan sifat yang berupa segmen DNA fungsional disebut…",["Kromatid","Gen","Sentromer","Ribosom"],1,"Gen merupakan segmen DNA yang memiliki fungsi tertentu."],
+["Basa nitrogen yang terdapat pada DNA tetapi tidak pada RNA adalah…",["Adenin","Guanin","Timin","Sitosin"],2,"DNA memiliki timin, sedangkan RNA menggunakan urasil."],
+["Gula pentosa penyusun RNA adalah…",["Deoksiribosa","Ribosa","Glukosa","Fruktosa"],1,"RNA mengandung gula ribosa."],
+["Pasangan basa komplementer DNA yang benar adalah…",["A–G dan T–C","A–T dan G–C","A–C dan G–T","A–U dan G–C"],1,"Pada DNA, adenin berpasangan dengan timin dan guanin dengan sitosin."],
+["Bentuk umum molekul DNA adalah…",["Heliks ganda","Satu rantai lurus","Lembaran protein","Mikrotubulus"],0,"DNA umumnya tersusun atas dua untai antiparalel berbentuk heliks ganda."],
+["Proses pembentukan RNA berdasarkan cetakan DNA disebut…",["Translasi","Replikasi","Transkripsi","Mutasi"],2,"Transkripsi menghasilkan RNA dari cetakan DNA."],
+["Organel/tempat utama translasi berlangsung adalah…",["Lisosom","Ribosom","Sentriol","Badan Golgi"],1,"Ribosom membaca kodon mRNA dan membantu pembentukan polipeptida."],
+["Pembelahan yang menghasilkan sel anak dengan jumlah kromosom setengah dari induk diploid adalah…",["Mitosis","Meiosis","Amitosis","Pembelahan biner"],1,"Meiosis menghasilkan sel haploid."],
+["Peristiwa pindah silang umumnya terjadi pada…",["Profase I meiosis","Metafase mitosis","Telofase II","Anafase mitosis"],0,"Pindah silang terjadi pada profase I ketika kromosom homolog berpasangan."],
+["Hukum I Mendel dikenal sebagai hukum…",["Asortasi bebas","Dominansi mutlak","Segregasi","Pautan"],2,"Pasangan alel berpisah saat pembentukan gamet."],
+["Pada persilangan Tt × Tt dengan T dominan penuh, rasio fenotipe keturunannya adalah…",["1:1","1:2:1","3:1","9:3:3:1"],2,"Tiga keturunan berfenotipe dominan dan satu resesif."],
+["Persilangan Bb × bb menghasilkan peluang keturunan bb sebesar…",["0%","25%","50%","100%"],2,"Kombinasi keturunan: 1/2 Bb dan 1/2 bb."],
+["Gamet yang dapat dibentuk oleh individu AaBb dengan asortasi bebas adalah…",["AB saja","Aa dan Bb","AB, Ab, aB, ab","AA, aa, BB, bb"],2,"Dua pasang alel heterozigot menghasilkan empat tipe gamet."],
+["Pada AaBb × AaBb, peluang aabb jika gen berasortasi bebas adalah…",["1/4","1/8","1/16","3/16"],2,"P(aa)=1/4 dan P(bb)=1/4; hasil kali = 1/16."],
+["Fenotipe merah muda dari persilangan bunga merah dan putih merupakan contoh…",["Kodominansi","Dominansi tidak sempurna","Epistasis","Pautan seks"],1,"Heterozigot memperlihatkan fenotipe perantara."],
+["Golongan darah AB menunjukkan pola…",["Dominansi tidak sempurna","Kodominansi","Resesif ganda","Poligenik"],1,"Alel Iᴬ dan Iᴮ sama-sama terekspresi."],
+["Gen yang berada pada kromosom seks disebut mengalami pewarisan…",["Poligenik","Terpaut kelamin","Epistasis","Intermediet"],1,"Pewarisan terpaut kelamin melibatkan gen pada kromosom seks."],
+["Jika ayah Iᴬi dan ibu Iᴮi, peluang anak bergolongan darah O adalah…",["0%","25%","50%","75%"],1,"Kombinasi ii muncul satu dari empat kemungkinan."],
+["Perubahan urutan basa DNA disebut…",["Translasi","Mutasi","Replikasi","Segregasi"],1,"Mutasi adalah perubahan materi genetik."],
+["Sifat seperti tinggi badan manusia umumnya dipengaruhi oleh…",["Satu gen saja","Banyak gen dan lingkungan","Kromosom Y saja","Hanya pola makan"],1,"Tinggi badan merupakan sifat kompleks yang dipengaruhi faktor genetik dan lingkungan."]
+];
+const quiz=document.getElementById('quiz');
+function renderQuiz(){quiz.innerHTML=qs.map((q,i)=>`<div class="question" id="q${i}"><p>${i+1}. ${q[0]}</p>${q[1].map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" onchange="updateProgress()"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="feedback" id="f${i}"></div></div>`).join('');updateProgress()}
+function updateProgress(){let n=qs.filter((q,i)=>document.querySelector(`input[name=q${i}]:checked`)).length;document.getElementById('answered').textContent=`${n} dari 20 soal dijawab`;document.getElementById('bar').style.width=(n/20*100)+'%'}
+function grade(){let n=0,missing=0;qs.forEach((q,i)=>{let a=document.querySelector(`input[name=q${i}]:checked`);let f=document.getElementById('f'+i);if(!a){missing++;f.className='feedback wrong';f.textContent='Belum dijawab. Kunci: '+String.fromCharCode(65+q[2])+'. '+q[1][q[2]]+' — '+q[3];return}let ok=+a.value===q[2];if(ok)n++;f.className='feedback '+(ok?'correct':'wrong');f.textContent=(ok?'Benar. ':'Belum tepat. Kunci: '+String.fromCharCode(65+q[2])+'. '+q[1][q[2]]+'. ')+q[3]});let r=document.getElementById('result');r.innerHTML=`<div class="callout"><h3>Hasil Asesmen</h3><div class="kpi">${n*5}/100</div><b>${n} dari 20 jawaban benar</b><p>${missing?missing+' soal belum dijawab. ':'Semua soal telah dijawab. '}${n>=16?'Sangat baik!':n>=12?'Baik, pelajari kembali soal yang belum tepat.':'Terus berlatih dan ulangi materi yang belum dikuasai.'}</p></div>`;r.scrollIntoView({behavior:'smooth',block:'center'})}
+function resetQuiz(){renderQuiz();document.getElementById('result').innerHTML='';window.scrollTo({top:0,behavior:'smooth'})}
+function saveReflection(){let v=document.getElementById('reflection').value;try{localStorage.setItem('refleksiGenetikaXII',v);document.getElementById('saved').textContent='Refleksi tersimpan pada browser ini.'}catch(e){document.getElementById('saved').textContent='Penyimpanan tidak tersedia pada browser ini.'}}
+renderQuiz();
+</script></body></html>
